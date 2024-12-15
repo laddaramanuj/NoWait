@@ -1,0 +1,156 @@
+body, html {
+  height: 100%;
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+  background: linear-gradient(45deg, #007bff, #6610f2);
+  color: white;
+}
+.navbar .nav-link, .navbar-brand {
+  color: white !important;
+}
+.navbar .nav-link:hover {
+  color: #d1d1d1 !important;
+}
+
+/* Chatbot Container */
+.chatbot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 56px);
+  padding: 20px;
+}
+
+/* Chat Window Styling */
+.chat-window {
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.chat-content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chat-message {
+  padding: 10px 15px;
+  border-radius: 10px;
+  max-width: 75%;
+  font-size: 14px;
+}
+.chat-message.user {
+  align-self: flex-end;
+  background-color: #007bff;
+  color: white;
+}
+.chat-message.bot {
+  align-self: flex-start;
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+/* Chat Input Styling */
+.chat-input-container {
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e1e1e1;
+}
+.chat-input {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  padding: 10px;
+  font-size: 15px;
+}
+
+/* Access Denied Styling */
+.access-denied {
+  display: none;
+  color: red;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.image-container {
+    position: relative;
+    margin: 20px 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.image-container img {
+    width: 200px;
+    height: auto;
+}
+
+.rounded-image {
+    border-radius: 50px;
+}
+
+.description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Hide description by default */
+    transition: opacity 0.3s ease; /* Smooth fade-in */
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+    pointer-events: none; /* Allow interaction with underlying elements */
+}
+
+.image-container:hover .description {
+    opacity: 1; /* Make the description visible */
+}
+
+.counter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.counter-button {
+    font-size: 10px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.counter-button:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+.counter {
+    font-size: 15px;
+    font-weight: bold;
+    width: 50px;
+    text-align: center;
+}
