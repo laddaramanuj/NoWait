@@ -124,7 +124,7 @@ async def upload_menu_item(
         'is_gluten_free': is_gluten_free,
         'spice_level': spice_level,
         'serving_size': serving_size,
-        'image_url': image_url,
+        # 'image_url': image_url,
         'category_id': category_id,
     }
 
