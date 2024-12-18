@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Restaurant</title>
+</head>
+<body>
+    <h1>Upload Restaurant Data</h1>
+    <form id="restaurantForm" enctype="multipart/form-data">
+        <label for="name">Restaurant Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="address">Restaurant Address:</label>
+        <input type="text" id="address" name="address" required><br><br>
+
+        <label for="contact">Contact Number:</label>
+        <input type="text" id="contact" name="contact" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="opening_hours">Opening Hours (JSON format):</label>
+        <textarea id="opening_hours" name="opening_hours" required></textarea><br><br>
+
+        <label for="is_open">Is the restaurant open?</label>
+        <input type="checkbox" id="is_open" name="is_open" checked><br><br>
+
+        <button type="submit">Upload Restaurant</button>
+    </form>
+
+    <script>
+        const restaurantForm = document.getElementById('restaurantForm');
+
+        restaurantForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData();
+            formData.append('name', document.getElementById('name').value);
+            formData.append('address', document.getElementById('address').value);
+            formData.append('contact', document.getElementById('contact').value);
+            formData.append('email', document.getElementById('email').value);
+            formData.append('opening_hours', document.getElementById('opening_hours').value); // JSON object
+            formData.append('is_open', document.getElementById('is_open').checked ? 'true' : 'false');
+
+            const response = await fetch('/', {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (response.ok) {
+                alert('Restaurant uploaded successfully!');
+            } else {
+                alert('Error uploading restaurant');
+            }
+        });
+    </script>
+</body>
+</html>
